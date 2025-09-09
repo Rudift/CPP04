@@ -8,7 +8,9 @@ BUILD_DIR = build
 SRCS = main.cpp \
 	Animal.cpp \
 	Cat.cpp \
-	Dog.cpp
+	Dog.cpp \
+	WrongAnimal.cpp \
+	WrongCat.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

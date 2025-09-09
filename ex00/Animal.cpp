@@ -15,6 +15,11 @@
 //Default constructor
 Animal::Animal(){
 	_type = "Random animal";
+	std::cout 
+		<< GREEN
+		<< "an animal is created !"
+		<< RESET
+		<< std::endl;
 }
 
 
@@ -32,7 +37,13 @@ Animal&	Animal::operator=(const Animal& other){
 }
 
 //Destructor
-Animal::~Animal(void){}
+Animal::~Animal(void){
+	std::cout 
+		<< RED
+		<< "an animal is dead !"
+		<< RESET
+		<< std::endl;
+}
 
 //Member fonctions
 void	Animal::  makeSound(void)const{

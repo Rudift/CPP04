@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdeliere <vdeliere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-09-08 11:43:40 by vdeliere          #+#    #+#             */
-/*   Updated: 2025-09-08 11:43:40 by vdeliere         ###   ########.fr       */
+/*   Created: 2025-09-09 08:15:37 by vdeliere          #+#    #+#             */
+/*   Updated: 2025-09-09 08:15:37 by vdeliere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongAnimal.hpp"
 
 //Default constructor
-Cat::Cat(void){
-	_type = "Cat";
+WrongAnimal::WrongAnimal(){
+	_type = "Random WrongAnimal";
 	std::cout 
 		<< GREEN
-		<< "a cat is created !"
+		<< "a wrong animal is created !"
 		<< RESET
 		<< std::endl;
 }
 
+
 //Copy constructor
-Cat::Cat(const Cat& other){
+WrongAnimal::WrongAnimal(const WrongAnimal& other){
 	_type = other._type;
 }
 
-//Assignement operator
-Cat&	Cat::operator=(const Cat& other){
+//Assignement operator 
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other){
 	if (this != &other){
 		_type = other._type;
 	}
@@ -36,10 +37,21 @@ Cat&	Cat::operator=(const Cat& other){
 }
 
 //Destructor
-Cat::~Cat(void){
+WrongAnimal::~WrongAnimal(void){
 	std::cout 
 		<< RED
-		<< "a cat is dead !"
+		<< "a wrong animal is dead !"
 		<< RESET
 		<< std::endl;
+}
+
+//Member fonctions
+void	WrongAnimal::  makeSound(void)const{
+	std::cout 
+		<<"\xF0\x9F\x90\xB7"
+		<< YELLOW + "Gruik !" + RESET << std::endl;
+}
+
+std::string	WrongAnimal::getType(void)const{
+	return(_type);
 }

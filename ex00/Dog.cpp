@@ -15,6 +15,11 @@
 //Default constructor
 Dog::Dog(void){
 	_type = "Dog";
+	std::cout 
+		<< GREEN
+		<< "a dog is created !"
+		<< RESET
+		<< std::endl;
 }
 
 //Copy constructor
@@ -31,4 +36,10 @@ Dog&	Dog::operator=(const Dog& other){
 }
 
 //Destructor
-Dog::~Dog(void){}
+Dog::~Dog(void){
+	std::cout 
+		<< RED
+		<< "a dog is dead !"
+		<< RESET
+		<< std::endl;
+}
