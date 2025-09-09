@@ -24,14 +24,22 @@ Cat::Cat(void){
 }
 
 //Copy constructor
-Cat::Cat(const Cat& other){
-	_type = other._type;
+Cat::Cat(const Cat& other) : Animal(other){
+	if (other._brain)
+		_brain = new Brain(*other._brain);
+	else
+		_brain = NULL;
 }
 
 //Assignement operator
 Cat&	Cat::operator=(const Cat& other){
 	if (this != &other){
-		_type = other._type;
+		Animal::operator=(other);
+		delete _brain;
+		if (other._brain)
+			_brain = new Brain (*other._brain);
+		else
+			_brain = NULL;
 	}
 	return (*this);
 }

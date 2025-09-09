@@ -24,14 +24,22 @@ Dog::Dog(void){
 }
 
 //Copy constructor
-Dog::Dog(const Dog& other){
-	_type = other._type;
+Dog::Dog(const Dog& other) : Animal(other){
+	if (other._brain)
+		_brain = new Brain(*other._brain);
+	else
+		_brain = NULL;
 }
 
 //Assignement operator
 Dog&	Dog::operator=(const Dog& other){
 	if (this != &other){
-		_type = other._type;
+		Animal::operator=(other);
+		delete _brain;
+		if (other._brain)
+			_brain = new Brain (*other._brain);
+		else
+			_brain = NULL;
 	}
 	return (*this);
 }
