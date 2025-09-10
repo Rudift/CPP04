@@ -27,7 +27,7 @@
 			virtual ~WrongAnimal(void);
 
 			//Members
-			virtual void	makeSound()const;
+			void	makeSound()const;
 
 			//Getter
 			std::string	getType(void)const;

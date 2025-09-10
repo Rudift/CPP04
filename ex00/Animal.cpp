@@ -47,14 +47,9 @@ Animal::~Animal(void){
 
 //Member fonctions
 void	Animal::  makeSound(void)const{
-	if (_type == "Cat")
-		std::cout 
-			<<"\xF0\x9F\x98\xBB"
-			<< YELLOW + "Miaouuuuuh" + RESET << std::endl;
-	else if (_type == "Dog")
-		std::cout 
-			<<"\xF0\x9F\x90\xB6"
-			<< BLUE + "Wouf wouf" + RESET << std::endl;
+	std::cout 
+		<<"\xF0\x9F\x90\xB7"
+		<< YELLOW + "Gruik !" + RESET << std::endl;
 }
 
 std::string	Animal::getType(void)const{

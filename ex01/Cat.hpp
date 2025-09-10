@@ -21,6 +21,10 @@
 			Cat(const Cat& other);
 			Cat& operator=(const Cat& other);
 			~Cat();
+
+			//Member fonction
+			virtual void	makeSound()const;
+			
 		private :
 			Brain	*_brain;
 	};

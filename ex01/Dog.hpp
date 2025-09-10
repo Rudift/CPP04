@@ -22,6 +22,10 @@
 			Dog(const Dog& other);
 			Dog& operator=(const Dog& other);
 			~Dog();
+
+			//Member fonction
+			virtual void	makeSound()const;
+			
 		private :
 			Brain	*_brain;
 	};

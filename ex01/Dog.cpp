@@ -53,3 +53,9 @@ Dog::~Dog(void){
 		<< RESET
 		<< std::endl;
 }
+
+void	Dog::makeSound(void)const{
+	std::cout 
+		<<"\xF0\x9F\x90\xB6"
+		<< BLUE + "Wouf wouf" + RESET << std::endl;
+}
