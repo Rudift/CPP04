@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdeliere <vdeliere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-09-09 13:49:51 by vdeliere          #+#    #+#             */
-/*   Updated: 2025-09-09 13:49:51 by vdeliere         ###   ########.fr       */
+/*   Created: 2025-09-10 12:59:03 by vdeliere          #+#    #+#             */
+/*   Updated: 2025-09-10 12:59:03 by vdeliere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Cure.hpp"
 
-AMateria::AMateria(std::string const & type):_type(type){
+//Default constructor
+Cure::Cure(std::string const & type) : AMateria(type){
+	_type = "cure";
 	std::cout
-		<< MAGENTA
-		<< "A materia is created"
+		<< GREEN
+		<< "Cure is created"
 		<< RESET
 		<< std::endl;
 }
 
-AMateria::AMateria(const AMateria& other){
+//Copy constructor
+Cure::Cure(const Cure& other) : AMateria(other){
 	_type = other._type;
 }
 
-AMateria&	AMateria::operator=(const AMateria& other){
-	if (this != &other)
-		_type = other._type;
+//Assignement operator
+Cure&	Cure::operator=(const Cure& other){
+	if (this != &other){
+		AMateria::operator=(other);
+	}
 	return (*this);
 }
 
-AMateria::~AMateria(){
+//Destructor
+Cure::~Cure(){
 	std::cout
-		<< MAGENTA
-		<< "A materia is destroyed"
+		<< GREEN
+		<< "Cure is destroyed"
 		<< RESET
 		<< std::endl;
 }
