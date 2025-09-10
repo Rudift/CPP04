@@ -43,3 +43,9 @@ WrongCat::~WrongCat(void){
 		<< RESET
 		<< std::endl;
 }
+
+void	WrongCat::makeSound(void)const{
+	std::cout 
+		<<"\xF0\x9F\x98\xBB"
+		<< YELLOW + "Miaouuuuuh" + RESET << std::endl;
+}

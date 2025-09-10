@@ -20,5 +20,8 @@
 			WrongCat(const WrongCat& other);
 			WrongCat& operator=(const WrongCat& other);
 			~WrongCat();
+
+			//Member fonction
+			void	makeSound()const;
 	};
 #endif
