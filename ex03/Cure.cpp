@@ -14,7 +14,6 @@
 
 //Default constructor
 Cure::Cure(std::string const & type) : AMateria(type){
-	_type = "cure";
 	std::cout
 		<< GREEN
 		<< "Cure is created"
@@ -42,4 +41,10 @@ Cure::~Cure(){
 		<< "Cure is destroyed"
 		<< RESET
 		<< std::endl;
+}
+
+//Member fonction
+AMateria*	Cure::clone()const{
+	AMateria*	clone = new Cure("cure");
+	return (clone);
 }

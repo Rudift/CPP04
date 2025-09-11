@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdeliere <vdeliere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-09-10 12:58:39 by vdeliere          #+#    #+#             */
-/*   Updated: 2025-09-10 12:58:39 by vdeliere         ###   ########.fr       */
+/*   Created: 2025-09-11 12:36:17 by vdeliere          #+#    #+#             */
+/*   Updated: 2025-09-11 12:36:17 by vdeliere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-#  include "AMateria.hpp"
+# include "ICharacter.hpp"
+# include "AMateria.hpp"
+# include <string>
 
-class Ice : public AMateria{
-	public : 
-		//Canonical
-		Ice(std::string const & type);
-		Ice(const Ice& other);
-		Ice&	operator=(const Ice& other);
-		~Ice();
-
-		//Member fonctions
-		virtual AMateria* clone()const;
-
-};
+	class Character : public ICharacter{
+		public :
+			//Canonical
+			Character();
+			Character(const Character& other);
+			Character&	operator=(const Character& other);
+			~Character();
+	}
 
 #endif
+
+
+

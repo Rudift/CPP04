@@ -6,12 +6,9 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 BUILD_DIR = build
 
 SRCS = main.cpp \
-	AAnimal.cpp \
-	Cat.cpp \
-	Dog.cpp \
-	WrongAnimal.cpp \
-	WrongCat.cpp \
-	Brain.cpp
+	AMateria.cpp \
+	Cure.cpp \
+	Ice.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

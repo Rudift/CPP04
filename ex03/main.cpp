@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdeliere <vdeliere@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-09-10 12:58:39 by vdeliere          #+#    #+#             */
-/*   Updated: 2025-09-10 12:58:39 by vdeliere         ###   ########.fr       */
+/*   Created: 2025-09-11 09:31:20 by vdeliere          #+#    #+#             */
+/*   Updated: 2025-09-11 09:31:20 by vdeliere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#include "AMateria.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
 
-#  include "AMateria.hpp"
-
-class Ice : public AMateria{
-	public : 
-		//Canonical
-		Ice(std::string const & type);
-		Ice(const Ice& other);
-		Ice&	operator=(const Ice& other);
-		~Ice();
-
-		//Member fonctions
-		virtual AMateria* clone()const;
-
-};
-
-#endif
+int	main(void){
+	AMateria*	spelIce = new Ice("ice");
+	std::cout
+		<< spelIce->getType()
+		<< std::endl;
+}

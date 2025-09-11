@@ -12,6 +12,7 @@
 
 #include "AMateria.hpp"
 
+//Default constructor
 AMateria::AMateria(std::string const & type):_type(type){
 	std::cout
 		<< MAGENTA
@@ -20,20 +21,28 @@ AMateria::AMateria(std::string const & type):_type(type){
 		<< std::endl;
 }
 
+//Copy constructor
 AMateria::AMateria(const AMateria& other){
 	_type = other._type;
 }
 
+//Assignement operator
 AMateria&	AMateria::operator=(const AMateria& other){
 	if (this != &other)
 		_type = other._type;
 	return (*this);
 }
 
+//Destructor
 AMateria::~AMateria(){
 	std::cout
 		<< MAGENTA
 		<< "A materia is destroyed"
 		<< RESET
 		<< std::endl;
+}
+
+//Member fonctions
+std::string const & AMateria::getType()const{
+	return(_type);
 }

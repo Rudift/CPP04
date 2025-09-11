@@ -15,12 +15,15 @@
 
 #  include "AMateria.hpp"
 
-	class Cure : AMateria{
+	class Cure : public AMateria{
 		public:
 			//Canonical
 			Cure(std::string const & type);
 			Cure(const Cure& other);
 			Cure&	operator=(const Cure& other);
 			~Cure();
+
+			//Member fonctions
+			virtual AMateria* clone()const;
 	};
 #endif
