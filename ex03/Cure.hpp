@@ -24,6 +24,7 @@
 			~Cure();
 
 			//Member fonctions
-			virtual AMateria* clone()const;
+			AMateria* 	clone()const;
+			void		use(ICharacter& target);
 	};
 #endif

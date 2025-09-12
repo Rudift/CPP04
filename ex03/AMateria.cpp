@@ -48,16 +48,5 @@ std::string const & AMateria::getType()const{
 }
 
 void	AMateria::use(ICharacter& target){
-	if (_type == "ice")
-		std::cout
-			<< CYAN
-			<< "*shoots an ice bolt at "
-			<< YELLOW << target.getName() << CYAN << " *"
-			<< RESET << std::endl;
-	else if (_type == "cure")
-		std::cout
-			<< GREEN
-			<< "*shoots an ice bolt at "
-			<< YELLOW << target.getName() << GREEN << " *"
-			<< RESET << std::endl;
+	(void)target;
 }

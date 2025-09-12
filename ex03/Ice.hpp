@@ -24,7 +24,8 @@ class Ice : public AMateria{
 		~Ice();
 
 		//Member fonctions
-		virtual AMateria* clone()const;
+		AMateria*	clone()const;
+		void		use(ICharacter& target);
 
 };
 

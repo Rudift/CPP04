@@ -8,7 +8,9 @@ BUILD_DIR = build
 SRCS = main.cpp \
 	AMateria.cpp \
 	Cure.cpp \
-	Ice.cpp
+	Ice.cpp \
+	Character.cpp \
+	MateriaSource.cpp
 
 OBJS = $(SRCS:%.cpp=$(BUILD_DIR)/%.o)
 DEPS = $(OBJS:.o=.d)

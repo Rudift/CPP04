@@ -14,6 +14,10 @@
 
 //Default constructor
 Character::Character(std::string name) : _name(name){
+	for (int i = 0; i < 4; i++){
+		_inventory[i] = NULL;
+		_unequiped[i] = NULL;
+	}
 	std::cout
 		<< "The character "
 		<< _name
@@ -40,6 +44,12 @@ Character&	Character::operator=(const Character& other){
 
 //Destructor
 Character::~Character(){
+	for (int i = 0; i < 4; i++){
+		if (_inventory[i])
+			delete _inventory[i];
+		if (_unequiped[i])
+			delete _unequiped[i];
+	}
 	std::cout
 		<< RED + "The character " + YELLOW
 		<< _name
@@ -48,6 +58,11 @@ Character::~Character(){
 }
 
 //Member fonction
+
+std::string const &	Character::getName()const{
+	return (_name);
+}
+
 bool	Character::inventoryFull(){
 	for (int i = 0; i < 4; i++){
 		if (!_inventory[i])
@@ -63,21 +78,38 @@ void	Character::equip(AMateria* m){
 			<< std::endl;
 			return ;
 	}
+
+	for (int i = 0; i < 4; i++){
+		if (_inventory[i] == m){
+			std::cout
+				<< RED + "Materia already equipped !!!" + RESET
+				<< std::endl;
+			return ;
+		}
+	}
+	
 	if (inventoryFull()){
 		std::cout
 			<< RED + "Inventory full !!!" + RESET
 			<< std::endl;
-			delete m;
 			return ;
 	}
-	for (int i; i < 4; i++){
+	
+	for (int i = 0; i < 4; i++){
 		if(!_inventory[i]){
 			_inventory[i] = m;
+			std::cout
+			<< MAGENTA
+			<< _inventory[i]->getType()
+			<< " materia is equiped"
+			<< RESET << std::endl;
 			break ;
 		}
 	}
+	
 }
 
+//A finir !!!
 void	Character::unequip(int idx){
 	if (idx > -1 && idx < 4)
 		_inventory[idx] = NULL;
@@ -88,7 +120,12 @@ void	Character::unequip(int idx){
 }
 
 void	Character::use(int idx, ICharacter& target){
-
+	if (!_inventory[idx])
+		std::cout
+			<< RED + "Inexistant materia" + RESET
+			<< std::endl;
+	else
+		_inventory[idx]->use(target);
 }
 
 
