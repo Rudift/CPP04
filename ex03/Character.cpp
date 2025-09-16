@@ -127,17 +127,28 @@ void	Character::equip(AMateria* m){
 			break ;
 		}
 	}
-	
 }
 
 //A finir !!!
 void	Character::unequip(int idx){
-	if (idx > -1 && idx < 4)
-		_inventory[idx] = NULL;
-	else
+	if (idx < 0 || idx > 3 || !_inventory[idx]){
 		std::cout
-			<< RED + "Invalid inventory number !!!" + RESET
-			<< std::endl;
+			<< RED + "No materia at slot "
+			<< idx
+			<< RESET << std::endl;
+		return ;
+	}
+	for (int i = 0; i < 4; i++){
+		if (!_unequiped[i]){
+			_unequiped[i] = _inventory[idx];
+			break;
+		}
+	}
+	_inventory[idx] = NULL;
+	std::cout
+		<< MAGENTA + "Materia unequipped from slot "
+		<< idx
+		<< RESET << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target){
