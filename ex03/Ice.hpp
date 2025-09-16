@@ -18,7 +18,7 @@
 class Ice : public AMateria{
 	public : 
 		//Canonical
-		Ice(std::string const & type);
+		Ice();
 		Ice(const Ice& other);
 		Ice&	operator=(const Ice& other);
 		~Ice();

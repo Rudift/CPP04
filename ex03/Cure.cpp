@@ -13,7 +13,7 @@
 #include "Cure.hpp"
 
 //Default constructor
-Cure::Cure(std::string const & type) : AMateria(type){
+Cure::Cure() : AMateria("cure"){
 	std::cout
 		<< GREEN
 		<< "Cure is created"
@@ -45,7 +45,7 @@ Cure::~Cure(){
 
 //Member fonction
 AMateria*	Cure::clone()const{
-	AMateria*	clone = new Cure("cure");
+	AMateria*	clone = new Cure();
 	return (clone);
 }
 

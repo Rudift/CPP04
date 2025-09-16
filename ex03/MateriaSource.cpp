@@ -13,7 +13,10 @@
 #include "MateriaSource.hpp"
 
 //Default constructor
-MateriaSource::MateriaSource(){}
+MateriaSource::MateriaSource(){
+	for(int i = 0; i < 4; i++)
+		_spellbook[i] = NULL;
+}
 
 //Copie constructor
 MateriaSource::MateriaSource(const MateriaSource& other){
@@ -43,6 +46,7 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& other){
 				_spellbook[i] = NULL;
 		}
 	}
+	return (*this);
 }
 
 //Destructor
@@ -85,8 +89,9 @@ void		MateriaSource::learnMateria(AMateria* m){
 
 AMateria*	MateriaSource::createMateria(std::string const & type){
 	for (int i = 0; i < 4; i++){
-		if (type == _spellbook[i]->getType())
+		if (_spellbook[i] && type == _spellbook[i]->getType()){
 			return (_spellbook[i]->clone());
+		}
 	}
 	return (0);
 }

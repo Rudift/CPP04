@@ -12,8 +12,7 @@
 
 #include "IMateriaSource.hpp"
 
-class MateriaSource
-{
+class MateriaSource : public IMateriaSource{
 	private :
 		AMateria*	_spellbook[4];
 	public :

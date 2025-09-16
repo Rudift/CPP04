@@ -114,6 +114,7 @@ void	Character::equip(AMateria* m){
 			<< RED + "Inventory full !!!" + RESET
 			<< std::endl;
 			return ;
+		delete m;
 	}
 	
 	for (int i = 0; i < 4; i++){
@@ -129,7 +130,6 @@ void	Character::equip(AMateria* m){
 	}
 }
 
-//A finir !!!
 void	Character::unequip(int idx){
 	if (idx < 0 || idx > 3 || !_inventory[idx]){
 		std::cout
@@ -159,5 +159,3 @@ void	Character::use(int idx, ICharacter& target){
 	else
 		_inventory[idx]->use(target);
 }
-
-

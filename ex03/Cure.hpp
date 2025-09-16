@@ -18,7 +18,7 @@
 	class Cure : public AMateria{
 		public:
 			//Canonical
-			Cure(std::string const & type);
+			Cure();
 			Cure(const Cure& other);
 			Cure&	operator=(const Cure& other);
 			~Cure();

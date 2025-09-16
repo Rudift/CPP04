@@ -12,10 +12,10 @@
 
 #include "Ice.hpp"
 
-Ice::Ice(std::string const & type) : AMateria(type){
-	_type = "Ice";
+Ice::Ice() : AMateria("ice"){
+	_type = "ice";
 	std::cout
-		<< GREEN
+		<< CYAN
 		<< "Ice is created"
 		<< RESET
 		<< std::endl;
@@ -45,14 +45,14 @@ Ice::~Ice(){
 
 //Member fonction
 AMateria*	Ice::clone()const{
-	AMateria*	clone = new Ice("ice");
+	AMateria*	clone = new Ice();
 	return (clone);
 }
 
 void	Ice::use(ICharacter& target){
 	std::cout
 			<< CYAN
-			<< "*shoots an ice bolt at "
+			<< "*\xE2\x9D\x84shoots an ice bolt at "
 			<< YELLOW << target.getName() << CYAN << " *"
 			<< RESET << std::endl;
 }
