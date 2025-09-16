@@ -32,12 +32,33 @@ Character::Character(const Character& other){
 		<< other._name
 		<< std::endl;
 	_name = other._name;
+
+	//Copy of the inventory
+	for (int i = 0; i < 4; i++){
+		if (other._inventory[i])
+			_inventory[i] = other._inventory[i]->clone();
+		else
+			_inventory[i] = NULL;
+		_unequiped[i] = NULL;
+	}
 }
 
 //Assignement operator
 Character&	Character::operator=(const Character& other){
 	if (this != &other){
 		_name = other._name;
+		for (int i = 0; i < 4; i++){
+			if (_inventory[i]){
+				delete _inventory[i];
+				_inventory[i] = NULL;
+			}
+		}
+		for (int i = 0; i < 4; i++){
+			if (other._inventory[i])
+				_inventory[i] = other._inventory[i]->clone();
+			else
+				_inventory[i] = NULL;
+		}
 	}
 	return (*this);
 }
@@ -99,10 +120,10 @@ void	Character::equip(AMateria* m){
 		if(!_inventory[i]){
 			_inventory[i] = m;
 			std::cout
-			<< MAGENTA
-			<< _inventory[i]->getType()
-			<< " materia is equiped"
-			<< RESET << std::endl;
+				<< MAGENTA
+				<< _inventory[i]->getType()
+				<< " materia is equiped"
+				<< RESET << std::endl;
 			break ;
 		}
 	}

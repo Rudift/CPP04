@@ -15,7 +15,7 @@
 class MateriaSource
 {
 	private :
-		AMateria*	_grimoire[4];
+		AMateria*	_spellbook[4];
 	public :
 		//Canonical
 		MateriaSource();
@@ -24,7 +24,8 @@ class MateriaSource
 		~MateriaSource();
 
 		//Member fonction
-		void		learnMateria(AMateria* m_to_learn);
+		void		learnMateria(AMateria* m);
 		AMateria*	createMateria(std::string const & type);
+		bool		spellbookFull();
 };
 
