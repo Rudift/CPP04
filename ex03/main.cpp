@@ -54,9 +54,19 @@ int	main(void){
 	std::cout
 		<< YELLOW + "Saruman says :" + RESET
 		<< "Yo mama was a dwarf !!!" << std::endl;
-	std::cout
-		<< YELLOW + "Gandalf" + RESET;
+	std::cout << YELLOW + "Gandalf " + RESET;
 	gandalf->use(0, *saroumane);
+	std::cout << YELLOW + "Saroumane " + RESET;
+	saroumane->use(1, *saroumane);
+
+	std::cout << YELLOW + "\n/------Press enter to continue------/" + RESET << std::endl;
+	std::cin.ignore(1000, '\n');
+
+	std::cout << MAGENTA + "\n/---🔮Gandalf desequip a spell🔮---/" + RESET << std::endl;
+	gandalf->unequip(1);
+	std::cout << MAGENTA + "\n/---🔮Saroumane desequip a spell which doesn't exist🔮---/" + RESET << std::endl;
+	saroumane->unequip(5);
+
 	std::cout << RED + "\n/------\xF0\x9F\x94\xA5 Press enter to destroy everything \xF0\x9F\x94\xA5------/" + RESET << std::endl;
 	std::cin.ignore(1000, '\n');
 
