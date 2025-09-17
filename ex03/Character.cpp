@@ -113,8 +113,8 @@ void	Character::equip(AMateria* m){
 		std::cout
 			<< RED + "Inventory full !!!" + RESET
 			<< std::endl;
+			delete m;
 			return ;
-		delete m;
 	}
 	
 	for (int i = 0; i < 4; i++){
