@@ -22,6 +22,7 @@ int main()
 	const Animal* i = new Cat();
 	const WrongAnimal* wa = new WrongAnimal();
 	const WrongAnimal* wc = new WrongCat();
+	const WrongCat*	wcc = new WrongCat();
 
 	std::cout << BLUE + "\n/---Life of the animals--/" + RESET << std::endl;
 	std::cout << j->getType() << " " << std::endl;
@@ -30,6 +31,7 @@ int main()
 	j->makeSound();
 	wa->makeSound();
 	wc->makeSound();
+	wcc->makeSound();
 	meta->makeSound();
 
 	std::cout << BLUE + "\n/---Death of the animals--/" + RESET << std::endl;
@@ -38,5 +40,6 @@ int main()
 	delete i;
 	delete wa;
 	delete wc;
+	delete wcc;
 	return 0;
 }
